@@ -1,5 +1,13 @@
 {
   "common": {
     "marvelLogo": "Marvel logo"
+  },
+  "layout": {
+    "searchCharacter": "Search a character...",
+    "results": "results",
+    "result": "result"
+  },
+  "favoriteCharactersList": {
+    "title": "Favorites"
   }
 }

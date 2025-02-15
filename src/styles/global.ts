@@ -40,6 +40,10 @@ const GlobalStyles = createGlobalStyle`
   html, body {
   height: 100%;
 }
+  input {
+  border: none;    
+  outline: none;   
+}
 `
 
 export default GlobalStyles
