@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { CharactersList } from '../pages/CharactersList'
 import { FavoriteCharactersList } from '../pages/FavoriteCharactersList'
 import { CharacterDetail } from '../pages/CharacterDetail'
-import { Layout } from '../components/Layout'
+import { Layout } from '../layouts/Layout'
 
 const router = createBrowserRouter([
   {
