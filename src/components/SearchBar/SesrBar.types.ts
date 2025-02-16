@@ -1,6 +1,6 @@
 export interface SearchBarProps {
-  value: string
   placeholder: string
-  setValue: (value: string) => void
+  setSearch: (search: string) => void
   resultsCount?: number
+  debounceTime?: number
 }

@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
-import { CharactersList } from '../pages/CharactersList'
-import { FavoriteCharactersList } from '../pages/FavoriteCharactersList'
+import { Characters } from '../pages/Characters'
+import { Favorites } from '../pages/Favorites'
 import { CharacterDetail } from '../pages/CharacterDetail'
 import { Layout } from '../layouts/Layout'
 
@@ -11,11 +11,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <CharactersList />,
+        element: <Characters />,
       },
       {
         path: '/favorites',
-        element: <FavoriteCharactersList />,
+        element: <Favorites />,
       },
       {
         path: '/characters/:id',

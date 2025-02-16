@@ -1,17 +1,16 @@
-import { fireEvent } from '@testing-library/react'
+import { fireEvent, waitFor } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
 import { SearchBar } from './SearchBar'
 import { renderWithProvider } from '../../tests/test-utils'
 
 describe('SearchBar Component', () => {
-  it('should render the input field with the correct placeholder and handle text input', () => {
+  it('should render the input field with the correct placeholder and handle text input', async () => {
     const setValue = vi.fn()
     const { getByPlaceholderText } = renderWithProvider(
       <SearchBar
         resultsCount={5}
-        value='Search'
-        setValue={setValue}
+        setSearch={setValue}
         placeholder='Type to search'
       />,
     )
@@ -20,15 +19,17 @@ describe('SearchBar Component', () => {
     expect(input).toBeInTheDocument()
 
     fireEvent.change(input, { target: { value: 'New search' } })
-    expect(setValue).toHaveBeenCalledWith('New search')
+
+    await waitFor(() => {
+      expect(setValue).toHaveBeenCalledWith('New search')
+    })
   })
 
   it('should render the results count with correct text for multiple results', () => {
     const { getByText } = renderWithProvider(
       <SearchBar
         resultsCount={5}
-        value='Search'
-        setValue={vi.fn()}
+        setSearch={vi.fn()}
         placeholder='Type to search'
       />,
     )
@@ -39,8 +40,7 @@ describe('SearchBar Component', () => {
     const { getByText } = renderWithProvider(
       <SearchBar
         resultsCount={1}
-        value='Search'
-        setValue={vi.fn()}
+        setSearch={vi.fn()}
         placeholder='Type to search'
       />,
     )
@@ -51,8 +51,7 @@ describe('SearchBar Component', () => {
     const { queryByText } = renderWithProvider(
       <SearchBar
         resultsCount={0}
-        value='Search'
-        setValue={vi.fn()}
+        setSearch={vi.fn()}
         placeholder='Type to search'
       />,
     )
@@ -64,8 +63,7 @@ describe('SearchBar Component', () => {
     const { getByLabelText } = renderWithProvider(
       <SearchBar
         resultsCount={5}
-        value='Search'
-        setValue={vi.fn()}
+        setSearch={vi.fn()}
         placeholder='Type to search'
       />,
     )

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import {
   Container,
@@ -10,13 +10,21 @@ import { SvgIcon } from '../SvgIcon/SvgIcon'
 import { SearchIcon } from '../../assets/SearchIcon'
 import texts from '../../assets/texts.json'
 import { SearchBarProps } from './SesrBar.types'
+import { useDebounce } from '../../hooks/useDebounce'
 
 export const SearchBar: FC<SearchBarProps> = ({
   resultsCount,
-  value,
-  setValue,
   placeholder,
+  debounceTime = 0,
+  setSearch,
 }) => {
+  const [value, setValue] = useState<string>('')
+  const debouncedSearchTerm = useDebounce(value, debounceTime)
+
+  useEffect(() => {
+    setSearch(debouncedSearchTerm)
+  }, [debouncedSearchTerm, setSearch])
+
   const countText = `${resultsCount} ${resultsCount && resultsCount > 1 ? texts.layout.results : texts.layout.result}`
 
   return (
@@ -36,7 +44,7 @@ export const SearchBar: FC<SearchBarProps> = ({
         />
       </InputContainer>
 
-      {resultsCount && <ResultsCount>{countText}</ResultsCount>}
+      {!!resultsCount && <ResultsCount>{countText}</ResultsCount>}
     </Container>
   )
 }

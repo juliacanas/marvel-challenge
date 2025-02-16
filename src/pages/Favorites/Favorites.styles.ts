@@ -15,5 +15,3 @@ export const Title = styled.h1`
   padding: 0 4.8rem;
   lineheight: 18.75rem;
 `
-
-export const GridItems = styled.div``
