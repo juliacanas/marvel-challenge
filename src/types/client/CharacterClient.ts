@@ -1,5 +1,8 @@
 export interface CharacterClient {
   id: number
   name: string
-  thumbnail: string
+  thumbnail: {
+    path: string
+    extension: string
+  }
 }

@@ -6,5 +6,8 @@ export const mapperCharacterDtoToClient = (
 ): CharacterClient => ({
   id: character.id,
   name: character.name,
-  thumbnail: character.thumbnail.path,
+  thumbnail: {
+    path: character.thumbnail.path,
+    extension: character.thumbnail.extension,
+  },
 })

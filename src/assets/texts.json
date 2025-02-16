@@ -9,5 +9,8 @@
   },
   "favorites": {
     "title": "Favorites"
+  },
+  "characters": {
+    "image": "Image of the character"
   }
 }
