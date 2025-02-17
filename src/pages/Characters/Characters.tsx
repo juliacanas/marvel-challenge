@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { CharactersList } from '../../components/CharactersList/CharactersList'
 import { SearchBar } from '../../components/SearchBar/SearchBar'
 import { Container } from './Characters.styles'
@@ -13,6 +13,10 @@ export const Characters: FC = () => {
   const { data } = useCharactersQuery(search.trim())
   const { favorites, listMode } = useFavorites(search.trim())
 
+  useEffect(() => {
+    setSearch('')
+  }, [listMode])
+
   return (
     <Container>
       <SearchBar
@@ -20,6 +24,7 @@ export const Characters: FC = () => {
         setSearch={setSearch}
         placeholder={texts.layout.searchCharacter}
         resultsCount={listMode === FAVORITES ? favorites.length : data?.total}
+        search={search}
       />
       <CharactersList
         characters={listMode === FAVORITES ? favorites : data?.results}

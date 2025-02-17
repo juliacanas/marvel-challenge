@@ -17,13 +17,18 @@ export const SearchBar: FC<SearchBarProps> = ({
   placeholder,
   debounceTime = 0,
   setSearch,
+  search,
 }) => {
-  const [value, setValue] = useState<string>('')
+  const [value, setValue] = useState<string>(search)
   const debouncedSearchTerm = useDebounce(value, debounceTime)
 
   useEffect(() => {
     setSearch(debouncedSearchTerm)
   }, [debouncedSearchTerm, setSearch])
+
+  useEffect(() => {
+    setValue(search)
+  }, [search])
 
   const countText = `${resultsCount} ${resultsCount && resultsCount > 1 ? texts.layout.results : texts.layout.result}`
 

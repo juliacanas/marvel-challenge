@@ -3,4 +3,5 @@ export interface SearchBarProps {
   setSearch: (search: string) => void
   resultsCount?: number
   debounceTime?: number
+  search: string
 }
