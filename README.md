@@ -47,7 +47,7 @@ Consta de dos vistas:
 
 ## API Marvel
 
-Para el desarrollo de esta muestra, se ha usado la API de Marvel. Se puede visitar su doc aquí: [su documentación][https://developer.marvel.com/documentation/getting_started]
+Para el desarrollo de esta muestra, se ha usado la API de Marvel. Se puede visitar su doc aquí: [su documentación](https://developer.marvel.com/documentation/getting_started)
 
 ## Tecnologías Clave y su Propósito
 
@@ -61,6 +61,7 @@ Para el desarrollo de esta muestra, se ha usado la API de Marvel. Se puede visit
 
 - **TanStack React Query** (@tanstack/react-query) → Manejo eficiente de datos y caché para llamadas a APIs.
 - **Axios** (axios) → Cliente HTTP para interactuar con la API de Marvel.
+- **React Context API** Opción ligera para compartir estado global evitando el prop drilling.
 
 🛠️ **Herramientas de Desarrollo**
 
