@@ -1,6 +1,5 @@
-import { FC, MouseEvent, useState } from 'react'
+import { FC, MouseEvent } from 'react'
 import {
-  Button,
   CharacterInfo,
   Container,
   Name,
@@ -8,17 +7,19 @@ import {
 } from './CharacterCard.styles'
 import { CharacterClient } from '../../types/client/CharacterClient'
 import texts from '../../assets/texts.json'
-import { SvgIcon } from '../SvgIcon/SvgIcon'
 import { UnselectedIcon } from '../../assets/UnselectedIcon'
 import { SelectedIcon } from '../../assets/SelectedIcon'
+import { useFavorites } from '../../context/useFavorites'
+import { IconButton } from '../IconButton/IconButton'
 
-export const CharacterCard: FC<CharacterClient> = ({ name, thumbnail }) => {
-  const [isSelected, setIsSelected] = useState(false)
+export const CharacterCard: FC<CharacterClient> = ({ name, thumbnail, id }) => {
+  const { favorites, toggleFavorite } = useFavorites()
+  const isFavorite = favorites.some((fav) => fav.id === id)
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
     e.preventDefault()
-    setIsSelected((prevState) => !prevState)
+    toggleFavorite({ name, thumbnail, id })
   }
 
   return (
@@ -26,14 +27,15 @@ export const CharacterCard: FC<CharacterClient> = ({ name, thumbnail }) => {
       <StyledImage src={thumbnail} alt={`${texts.characters.image} ${name}`} />
       <CharacterInfo>
         <Name>{name}</Name>
-        <Button onClick={handleClick}>
-          <SvgIcon
-            IconComponent={isSelected ? SelectedIcon : UnselectedIcon}
-            width={12}
-            height={12}
-            viewBox={'0 0 26 25'}
-          />
-        </Button>
+        <IconButton
+          buttonProps={{ onClick: handleClick }}
+          svgProps={{
+            IconComponent: isFavorite ? SelectedIcon : UnselectedIcon,
+            width: 12,
+            height: 12,
+            viewBox: '0 0 26 25',
+          }}
+        />
       </CharacterInfo>
     </Container>
   )

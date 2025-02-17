@@ -9,6 +9,7 @@ export const useCharacterDetailQuery = (id?: string) => {
       return response.data.data.results[0]
     },
     select: (data) => ({
+      id: data.id,
       name: data.name,
       description: data.description,
       thumbnail: `${data.thumbnail.path}.${data.thumbnail.extension}`,

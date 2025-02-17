@@ -1,7 +1,3 @@
-export interface CharacterDetailProps {
-  detailData: {
-    name: string
-    description: string
-    thumbnail: string
-  }
-}
+import { CharacterClient } from '../../../types/client/CharacterClient'
+
+export type CharacterDetailProps = CharacterClient

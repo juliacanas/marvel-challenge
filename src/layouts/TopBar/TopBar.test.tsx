@@ -16,13 +16,10 @@ describe('TopBar', () => {
     expect(linkToHome).toHaveAttribute('href', '/')
   })
 
-  it('should render selected icon, count and navigate to favorites page', () => {
-    const { getAllByRole, getByLabelText } = renderWithProvider(<TopBar />)
+  it('should render selected icon', () => {
+    const { getByLabelText } = renderWithProvider(<TopBar />)
 
     const selectedIcon = getByLabelText('icon')
     expect(selectedIcon).toBeInTheDocument()
-
-    const linkToFavorites = getAllByRole('link')[1]
-    expect(linkToFavorites).toHaveAttribute('href', '/favorites')
   })
 })

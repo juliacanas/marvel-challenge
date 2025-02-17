@@ -1,3 +1,6 @@
+import { ComicDto } from './ComicDto'
+import { ImageDto } from './ImageDto'
+
 export interface CharacterDto {
   id: number
   name: string
@@ -5,11 +8,8 @@ export interface CharacterDto {
   modified: Date
   resourceURI: string
   urls: string[]
-  thumbnail: {
-    path: string
-    extension: string
-  }
-  comics: unknown[] // TO-DO
+  thumbnail: ImageDto
+  comics: ComicDto[]
   stories: unknown[]
   events: Event[]
 }

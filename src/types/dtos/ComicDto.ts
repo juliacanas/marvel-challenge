@@ -1,11 +1,5 @@
-interface Image {
-  path: string
-  extension: string
-}
-interface Url {
-  type: string
-  url: string
-}
+import { ImageDto } from './ImageDto'
+
 interface ResourceList {
   available: number
   returned: number
@@ -33,7 +27,10 @@ export interface ComicDto {
     text: string
   }[]
   resourceURI: string
-  urls: Url[]
+  urls: {
+    type: string
+    url: string
+  }[]
   variants: []
   collections: []
   collectedIssues: []
@@ -42,8 +39,8 @@ export interface ComicDto {
     date: string
   }[]
   prices: []
-  thumbnail: Image
-  images: Image[]
+  thumbnail: ImageDto
+  images: ImageDto[]
   creators: ResourceList
   characters: ResourceList
   stories: ResourceList

@@ -16,7 +16,7 @@ export const CharacterDetail: FC = () => {
     <Container>
       <Header>
         {characterDetailResult && (
-          <CharacterResume detailData={characterDetailResult} />
+          <CharacterResume {...characterDetailResult} />
         )}
       </Header>
 

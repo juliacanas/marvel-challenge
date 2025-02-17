@@ -1,6 +1,5 @@
 import { FC } from 'react'
 
-import { SvgIcon } from '../../../components/SvgIcon/SvgIcon'
 import { UnselectedIcon } from '../../../assets/UnselectedIcon'
 import { CharacterDetailProps } from './CharacterResume.types'
 import texts from '../../../assets/texts.json'
@@ -10,32 +9,42 @@ import {
   CharacterInfo,
   InfoHeader,
   Title,
-  Button,
   Description,
 } from './CharacterResume.styles'
+import { IconButton } from '../../../components/IconButton/IconButton'
+import { SelectedIcon } from '../../../assets/SelectedIcon'
+import { useFavorites } from '../../../context/useFavorites'
 
-export const CharacterResume: FC<CharacterDetailProps> = ({ detailData }) => {
+export const CharacterResume: FC<CharacterDetailProps> = ({
+  id,
+  name,
+  thumbnail,
+  description,
+}) => {
+  const { favorites, toggleFavorite } = useFavorites()
+  const isFavorite = favorites.some((fav) => fav.id === id)
+
   return (
     <Container>
-      <CharacterImg
-        src={detailData.thumbnail}
-        alt={`${texts.characters.image} ${detailData.name}`}
-      />
+      <CharacterImg src={thumbnail} alt={`${texts.characters.image} ${name}`} />
 
       <CharacterInfo>
         <InfoHeader>
-          <Title>{detailData.name}</Title>
-          <Button>
-            <SvgIcon
-              IconComponent={UnselectedIcon}
-              width={24}
-              height={24}
-              viewBox={'0 0 26 25'}
-            />
-          </Button>
+          <Title>{name}</Title>
+          <IconButton
+            buttonProps={{
+              onClick: () => toggleFavorite({ id, name, thumbnail }),
+            }}
+            svgProps={{
+              IconComponent: isFavorite ? SelectedIcon : UnselectedIcon,
+              width: 24,
+              height: 24,
+              viewBox: '0 0 26 25',
+            }}
+          />
         </InfoHeader>
 
-        <Description>{detailData.description}</Description>
+        <Description>{description}</Description>
       </CharacterInfo>
     </Container>
   )

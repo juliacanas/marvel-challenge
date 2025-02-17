@@ -6,8 +6,18 @@ import { renderWithProvider } from '../../tests/test-utils'
 describe('CharactersList', () => {
   it('renders a list of characters', () => {
     const characters = [
-      { id: 1, name: 'Character 1', thumbnail: '' },
-      { id: 2, name: 'Character 2', thumbnail: '' },
+      {
+        id: 1,
+        name: 'Character 1',
+        thumbnail:
+          'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg',
+      },
+      {
+        id: 2,
+        name: 'Character 2',
+        thumbnail:
+          'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg',
+      },
     ]
     const { getByText } = renderWithProvider(
       <CharactersList characters={characters} />,

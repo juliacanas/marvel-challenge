@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
 
 export const Container = styled.div`
   width: 100%;
@@ -10,7 +9,7 @@ export const Container = styled.div`
   align-items: center;
   padding: 1.6rem 4.8rem;
 `
-export const FavCounter = styled(NavLink)`
+export const FavCounter = styled.div`
   display: flex;
   align-items: center;
   gap: 0.8rem;

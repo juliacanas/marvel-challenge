@@ -15,6 +15,7 @@ const queryClient = new QueryClient({
 import router from './routes'
 import theme from './styles/theme'
 import GlobalStyles from './styles/global'
+import { FavoritesProvider } from './context/FavoritesProvider'
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
         <ReactQueryDevtools />
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          <RouterProvider router={router} />
+          <FavoritesProvider>
+            <RouterProvider router={router} />
+          </FavoritesProvider>
         </ThemeProvider>
       </QueryClientProvider>
     </>
