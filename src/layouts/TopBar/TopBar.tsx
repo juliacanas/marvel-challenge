@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import { Container, CountText, FavCounter } from './TopBar.styles'
 import marvelLogo from '../../assets/logo.svg'
-import { SelectedIcon } from '../../assets/SelectedIcon'
+import { SelectedIcon } from '../../icons/SelectedIcon'
 import texts from '../../assets/texts.json'
 import { useFavorites } from '../../context/useFavorites'
 import { CHARACTERS, FAVORITES } from '../../constants'

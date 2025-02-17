@@ -7,8 +7,8 @@ import {
 } from './CharacterCard.styles'
 import { CharacterClient } from '../../types/client/CharacterClient'
 import texts from '../../assets/texts.json'
-import { UnselectedIcon } from '../../assets/UnselectedIcon'
-import { SelectedIcon } from '../../assets/SelectedIcon'
+import { UnselectedIcon } from '../../icons/UnselectedIcon'
+import { SelectedIcon } from '../../icons/SelectedIcon'
 import { useFavorites } from '../../context/useFavorites'
 import { IconButton } from '../IconButton/IconButton'
 

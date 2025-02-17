@@ -8,6 +8,10 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1.6rem 4.8rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 1.6rem;
+  }
 `
 export const FavCounter = styled.div`
   display: flex;

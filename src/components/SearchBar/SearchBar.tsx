@@ -7,7 +7,7 @@ import {
   ResultsCount,
 } from './SearchBar.styles'
 import { SvgIcon } from '../SvgIcon/SvgIcon'
-import { SearchIcon } from '../../assets/SearchIcon'
+import { SearchIcon } from '../../icons/SearchIcon'
 import texts from '../../assets/texts.json'
 import { SearchBarProps } from './SesrBar.types'
 import { useDebounce } from '../../hooks/useDebounce'

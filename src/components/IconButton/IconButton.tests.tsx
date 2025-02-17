@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest'
 import { IconButton } from './IconButton'
 import { fireEvent, render } from '@testing-library/react'
-import { SelectedIcon } from '../../assets/SelectedIcon'
+import { SelectedIcon } from '../../icons/SelectedIcon'
 
 describe('IconButton Component', () => {
   const mockButtonProps = {

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { UnselectedIcon } from '../../../assets/UnselectedIcon'
+import { UnselectedIcon } from '../../../icons/UnselectedIcon'
 import { CharacterDetailProps } from './CharacterResume.types'
 import texts from '../../../assets/texts.json'
 import {
@@ -12,7 +12,7 @@ import {
   Description,
 } from './CharacterResume.styles'
 import { IconButton } from '../../../components/IconButton/IconButton'
-import { SelectedIcon } from '../../../assets/SelectedIcon'
+import { SelectedIcon } from '../../../icons/SelectedIcon'
 import { useFavorites } from '../../../context/useFavorites'
 
 export const CharacterResume: FC<CharacterDetailProps> = ({
