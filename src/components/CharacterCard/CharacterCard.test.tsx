@@ -8,10 +8,7 @@ describe('CharacterCard', () => {
   const mockCharacter: CharacterClient = {
     id: 1,
     name: '3-D Man',
-    thumbnail: {
-      path: 'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784',
-      extension: 'jpg',
-    },
+    thumbnail: 'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg',
   }
 
   it('should render the character name and image correctly', () => {

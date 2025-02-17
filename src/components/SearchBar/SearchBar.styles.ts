@@ -5,6 +5,10 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 1.2rem;
   padding: 1.2rem 4.8rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 1.2rem 1.6rem;
+  }
 `
 
 export const InputContainer = styled.div`

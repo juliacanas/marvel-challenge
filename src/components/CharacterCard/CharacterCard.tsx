@@ -5,7 +5,6 @@ import {
   Container,
   Name,
   StyledImage,
-  WhiteCut,
 } from './CharacterCard.styles'
 import { CharacterClient } from '../../types/client/CharacterClient'
 import texts from '../../assets/texts.json'
@@ -24,10 +23,7 @@ export const CharacterCard: FC<CharacterClient> = ({ name, thumbnail }) => {
 
   return (
     <Container>
-      <StyledImage
-        src={`${thumbnail.path}.${thumbnail.extension}`}
-        alt={`${texts.characters.image} ${name}`}
-      />
+      <StyledImage src={thumbnail} alt={`${texts.characters.image} ${name}`} />
       <CharacterInfo>
         <Name>{name}</Name>
         <Button onClick={handleClick}>
@@ -39,7 +35,6 @@ export const CharacterCard: FC<CharacterClient> = ({ name, thumbnail }) => {
           />
         </Button>
       </CharacterInfo>
-      <WhiteCut />
     </Container>
   )
 }

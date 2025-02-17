@@ -4,6 +4,14 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 100%;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%
+  );
 `
 
 export const CharacterInfo = styled.div`
@@ -26,16 +34,6 @@ export const Name = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   color: ${({ theme }) => theme.colors.white};
   text-transform: uppercase;
-`
-export const WhiteCut = styled.div`
-  position: absolute;
-  z-index: 1;
-  background-color: ${({ theme }) => theme.colors.white};
-  width: 1.2rem;
-  height: 1.2rem;
-  right: -0.6rem;
-  bottom: -0.6rem;
-  transform: rotate(45deg);
 `
 
 export const Button = styled.button`

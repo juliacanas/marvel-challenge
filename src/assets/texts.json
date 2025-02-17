@@ -12,5 +12,11 @@
   },
   "characters": {
     "image": "Image of the character"
+  },
+  "detail": {
+    "comics": {
+      "title": "Comics",
+      "images": "Image of the comic: "
+    }
   }
 }
