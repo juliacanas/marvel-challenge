@@ -12,6 +12,7 @@ describe('SearchBar Component', () => {
         resultsCount={5}
         setSearch={setValue}
         placeholder='Type to search'
+        search=''
       />,
     )
 
@@ -31,6 +32,7 @@ describe('SearchBar Component', () => {
         resultsCount={5}
         setSearch={vi.fn()}
         placeholder='Type to search'
+        search=''
       />,
     )
     expect(getByText('5 results')).toBeInTheDocument()
@@ -42,6 +44,7 @@ describe('SearchBar Component', () => {
         resultsCount={1}
         setSearch={vi.fn()}
         placeholder='Type to search'
+        search=''
       />,
     )
     expect(getByText('1 result')).toBeInTheDocument()
@@ -53,6 +56,7 @@ describe('SearchBar Component', () => {
         resultsCount={0}
         setSearch={vi.fn()}
         placeholder='Type to search'
+        search=''
       />,
     )
 
@@ -65,6 +69,7 @@ describe('SearchBar Component', () => {
         resultsCount={5}
         setSearch={vi.fn()}
         placeholder='Type to search'
+        search=''
       />,
     )
 
