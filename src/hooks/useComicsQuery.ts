@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+
 import { apiClient } from '../services/config'
 import { ComicDto } from '../types/dtos/ComicDto'
 import { mapperComicDtoToClient } from '../mappers/comicMapper'
@@ -14,9 +15,13 @@ export const useComicsQuery = (id?: string) => {
       return response.data
     },
     select: ({ data }) => ({
-      comics: data.results.map((comic: ComicDto) =>
-        mapperComicDtoToClient(comic),
-      ),
+      comics: data.results
+        .sort((a: ComicDto, b: ComicDto) => {
+          const dateA = new Date(a.dates[0].date)
+          const dateB = new Date(b.dates[0].date)
+          return dateA.getTime() - dateB.getTime()
+        })
+        .map((comic: ComicDto) => mapperComicDtoToClient(comic)),
     }),
     retry: 1,
   })
