@@ -6,13 +6,16 @@ Este proyecto es una aplicación web diseñada para consultar y gestionar person
 
 ## En acción
 
-Para ver marvel-challenge en acción clona el repositorio y corre localmente:
+Para ver marvel-challenge en acción sigue los siguientes pasos:
 
-```bash
-git clone https://github.com/juliacanas/marvel-challenge.git
-cd marvel-challenge
-npm install
-```
+1. Clona el repositorio `git clone https://github.com/juliacanas/marvel-challenge.git`
+2. Accede al proyecto `cd marvel-challenge`
+3. Instala las dependencias necesarias `npm install`
+4. Copia el archivo `.env.example` en la raíz del proyecto y renómbralo como `.env`.
+5. Abre el archivo `.env` y añade tu clave personal generada en la [documentación de Marvel](https://developer.marvel.com/).
+6. Guarda los cambios.
+7. Ejecuta el siguiente comando para iniciar el proyecto `npm run dev`
+8. El navegador lo abrirà automaticamente, si no fuera así puedes verlo en `http://localhost:5173/`
 
 ## Vistas
 
